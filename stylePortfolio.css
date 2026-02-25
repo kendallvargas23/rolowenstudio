@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-principal: rgb(255, 255, 255);
+    --color-secundario: rgb(15, 14, 14);
+    --color-terciario: rgb(255, 0, 0);
+    --sombra: rgba(0, 0, 0, 0.88);
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "header header header"
+    "content content content";
+    min-height: 100vh;
+    color: var(--color-secundario);
+    overflow: visible;
+}
+
+body header {
+    grid-area: header;
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+body main {
+    grid-area: content;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+nav {
+    margin: 10px 0 10px 0;
+    justify-self: center;
+}
+
+nav a {
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.navAnchor {
+    color: var(--color-secundario);
+}
+
+nav a:visited {
+    color: var(--color-secundario);
+}
+
+ul {
+    list-style: none;
+}
+ul li {
+    display: inline-block;
+    position: relative;
+}
+ul li a {
+    display: block;
+    padding: 20px 21px;
+    text-align: center;
+    .img2 {
+        display: none;
+    }
+}
+ul li ul.dropdown li {
+    display: block;
+}
+ul li ul.dropdown {
+    width: 100%;
+    background: var(--color-principal);
+    border: 1px solid var(--color-secundario);
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+ul li ul.dropdown li a {
+    color: var(--color-secundario);
+}
+ul li ul.dropdown li a:hover {
+    color: rgb(190, 190, 190);
+}
+ul li a:hover {
+    color: rgb(190, 190, 190);
+    .img1 {
+        display: none;
+    }
+    .img2 {
+        display: inline;
+    }
+}
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+
+.artistInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+.artistPhoto {
+    display: block;
+    margin: auto;
+    height: 120px;
+    width: 120px;
+    box-shadow: 0 0 10px 0 var(--sombra);
+    border-radius: 100%;
+}
+
+article {
+    display: inline-block;
+    text-align: center;
+    justify-items: center;
+}
+
+.titles {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.card {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    border-top: 2px solid rgb(44, 44, 44);
+    padding-top: 10px;
+    gap: 15px;
+}
+
+/* social containers */
+.socialContainer {
+    width: 52px;
+    height: 52px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+    border-radius: 100%;
+}
+
+.containerOne:hover {
+    background-color: #d62976;
+    transition-duration: .3s;
+}
+
+.containerTwo:hover {
+    background-color: #128C7E;
+    transition-duration: .3s;
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: .3s;
+}
+
+.socialSvg {
+    width: 17px;
+}
+
+.socialSvg path {
+    fill: rgb(255, 255, 255);
+}
+
+
+table {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.1rem;
+    padding: 1.1rem;
+    margin-bottom: 25px;
+    border: 2px solid black;
+    border-top: none;
+}
+
+caption {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    text-align: start;
+    padding: 1rem;
+    padding-left: 1.2rem;
+    padding-bottom: 0;
+    border: 2px solid var(--color-secundario);
+    border-bottom: none;
+}
+
+tr > td {
+    text-align: start;
+    padding-right: 1.8rem;
+    padding-bottom: 0.1rem;
+    font-weight: 600;
+}
+
+tr > td:last-child {
+    padding-right: 0.4rem;
+    font-weight: normal;
+}
+
+
+section {
+    margin: 30px;
+}
+
+h2 {
+    padding: 10px;
+    font-size: 1.9rem;
+    border: 2px solid var(--color-secundario);
+    box-shadow: 7px 8px var(--sombra);
+}
+
+h2:nth-child(2){
+    width: 25vw;
+    font-size: 1.7rem;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+/*último h2*/
+.temp {
+    width: 25vw;
+    font-size: 1.7rem;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 50px;
+    align-items: center;
+    justify-items: center;
+}
+
+.item {
+    display: grid;
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
+    grid-template-columns: subgrid;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 25px;
+    align-items: center;
+    justify-items: center;
+}
+
+.item img {
+    width: 370px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 var(--sombra);
+}
+
+
+footer {
+    margin-top: 15px;
+    padding: 20px 10px 20px 30px;
+    color: var(--color-secundario);
+    background-color: var(--color-principal);
+}
+
+footer span {
+    margin-bottom: 30px;
+    margin-right: 21px;
+    color: rgb(92, 92, 92);
+}
+
+footer span:first-child {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: rgb(49, 48, 48);
+}
+
+footer p {
+    color: rgba(110, 110, 110, 0.671);
+    margin-top: 12px;
+    font-size: 0.9rem;
+}
+
+
+/*       MEDIA QUERIES       */
+
+/* Tablet (max 1024px) — 3-column grid */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item {
+        grid-column: 1 / 4;
+        grid-template-columns: subgrid;
+    }
+
+    .item img {
+        width: 280px;
+    }
+}
+
+/* Tablet (max 900px) — 2-column portfolio grid */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item {
+        grid-column: 1 / 3;
+        grid-template-columns: subgrid;
+    }
+
+    .item img {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .artistInfo {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .artistInfo > div:first-child {
+        display: none;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .artistPhoto {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .titles {
+        text-align: center;
+        width: 100%;
+    }
+
+    .card {
+        margin: 0 auto;
+    }
+
+    table {
+        grid-column: 1 / 3;
+        width: 80%;
+        max-width: 400px;
+        margin: 0 auto 25px auto;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h2:nth-child(2),
+    .temp {
+        width: 40vw;
+    }
+}
+
+/* Mobile (max 600px) */
+@media (max-width: 600px) {
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    ul li a {
+        padding: 12px 13px;
+        font-size: 1rem;
+    }
+
+    ul li ul.dropdown {
+        left: 0;
+        min-width: 150px;
+    }
+
+    body header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .artistInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 16px;
+        gap: 16px;
+    }
+
+    .artistInfo > div:first-child {
+        display: none;
+    }
+
+    article {
+        width: 90vw;
+        max-width: 360px;
+    }
+
+    .artistPhoto {
+        height: 100px;
+        width: 100px;
+    }
+
+    table {
+        width: 90vw;
+        max-width: 360px;
+        font-size: 1rem;
+    }
+
+    caption {
+        font-size: 1.2rem;
+    }
+
+    section {
+        margin: 20px 12px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        padding: 8px;
+    }
+
+    h2:nth-child(2),
+    .temp {
+        width: 60vw;
+        font-size: 1.3rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .item {
+        grid-column: 1 / 2;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .item img {
+        width: 90vw;
+        max-width: 400px;
+    }
+
+    footer {
+        padding: 16px;
+        text-align: center;
+    }
+
+    footer span {
+        display: inline-block;
+        margin-right: 8px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Very small screens (max 380px) */
+@media (max-width: 380px) {
+    ul li a {
+        padding: 10px 8px;
+        font-size: 0.88rem;
+    }
+
+    .socialContainer {
+        width: 44px;
+        height: 44px;
+    }
+
+    h2:nth-child(2),
+    .temp {
+        width: 75vw;
+    }
+
+    table {
+        font-size: 0.92rem;
+        padding: 0.7rem;
+    }
+}
