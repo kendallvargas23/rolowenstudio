@@ -16,7 +16,8 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
     "header header header"
-    "content content content";
+    "content content content"
+    "footer footer footer";
     min-height: 100vh;
     color: var(--color-secundario);
     overflow: visible;
@@ -265,10 +266,13 @@ h2:nth-child(2){
 
 
 footer {
-    margin-top: 15px;
-    padding: 20px 10px 20px 30px;
+    grid-area: footer;
+    margin-top: 35px;
+    padding: 20px 20px 20px 30px;
     color: var(--color-secundario);
     background-color: var(--color-principal);
+    justify-self: center;
+    text-align: center;
 }
 
 footer span {
@@ -285,8 +289,9 @@ footer span:first-child {
 
 footer p {
     color: rgba(110, 110, 110, 0.671);
-    margin-top: 12px;
+    margin-top: 14px;
     font-size: 0.9rem;
+    justify-self: center;
 }
 
 
@@ -468,6 +473,7 @@ footer p {
         display: inline-block;
         margin-right: 8px;
         font-size: 0.95rem;
+        margin-bottom: 0;
     }
 }
 

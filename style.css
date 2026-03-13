@@ -203,7 +203,7 @@ h2 {
 article {
     padding: 2.3rem;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 var(--sombra);
+    box-shadow: 0 0 7px 0 var(--sombra);
     display: inline-block;
 }
 
@@ -386,9 +386,10 @@ iframe {
 
 footer {
     margin-top: 55px;
-    padding: 20px 20px 15px 30px;
+    padding: 20px 20px 20px 30px;
     color: var(--color-secundario);
     background-color: var(--color-principal);
+    text-align: center;
 }
 
 footer span {
@@ -405,7 +406,7 @@ footer span:first-child {
 
 footer p {
     color: rgba(110, 110, 110, 0.671);
-    margin-top: 12px;
+    margin-top: 15px;
     font-size: 0.9rem;
 }
 
@@ -563,6 +564,7 @@ footer p {
         display: inline-block;
         margin-right: 10px;
         font-size: 0.95rem;
+        margin-bottom: 0;
     }
 }
 
