@@ -29,7 +29,7 @@ body header {
     background-color: var(--color-principal);
     color: var(--color-secundario);
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
 }
 
@@ -60,6 +60,15 @@ nav a {
 
 nav a:visited {
     color: var(--color-secundario);
+}
+
+.derecha {
+    justify-self: end;
+    margin-right: 10px;
+}
+
+.derecha a {
+    font-size: 1rem;
 }
 
 ul {
@@ -413,8 +422,24 @@ footer p {
 
 /*       MEDIA QUERIES       */
 
+/* Abnormally Big Devices (max 1374px) */
+@media (max-width: 1374px) {
+    ul li a {
+        padding: 10px 9px;
+        font-size: 0.9rem;
+    }
+}
+
 /* Tablet (max 900px) */
 @media (max-width: 900px) {
+    body header {
+        grid-template-columns: 1fr;
+    }
+
+    .derecha {
+        display: none;
+    }
+
     .direction {
         grid-template-columns: 1fr;
         justify-items: center;
@@ -432,27 +457,39 @@ footer p {
     }
 
     .estudio {
-        width: 100%;
+        width: 80vw;
         height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 2px 0 var(--sombra);
     }
 
     h2 {
         width: 80vw;
     }
 
-    .questions-container {
-        max-width: 95%;
+    .staffSection {
+        margin-bottom: 0;
     }
 
     .firstArticle {
+        margin-right: 30px;
+        margin-bottom: 10px;
+    }
+
+    .questions-container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 718px) {
+    .firstArticle {
         margin-right: 0;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
 }
 
 /* Mobile (max 600px) */
 @media (max-width: 600px) {
-
     nav ul {
         display: flex;
         flex-wrap: wrap;
@@ -478,13 +515,13 @@ footer p {
         position: sticky;
         top: 0;
         z-index: 100;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     .estudio {
-        width: 95vw;
+        width: 90vw;
         height: auto;
-        border-radius: 6px;
+        border-radius: 10px;
+        box-shadow: 0 0 2px 0 var(--sombra);
     }
 
     h2 {
